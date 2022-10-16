@@ -40,6 +40,10 @@ const  phonkObject = [
         name:   "Prince Of Darkness",
         url:    "/music/Phonk/Prince.mp3",
     },
+    {
+        name:   "Avoid Me",
+        url:    "/music/Phonk/Avoid.mp3",
+    },
 ]
 music.volume = 0.1;
 
@@ -62,6 +66,7 @@ function musicSelect() {
 document.addEventListener("click", musicSelect)
 
 /* If music ends calling the random music selecter and player function */
+
 music.addEventListener('pause', musicSelect)
 
 
