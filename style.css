@@ -1,19 +1,68 @@
 /* Style the video: 100% width and height to cover the entire window */
 #myVideo {
-    position:fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: 0;
-  }
+  position:fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 0;
+}
   
-  #myButton {
-    width: 300px;
-    height: 200px;
-    font-size: 18px;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 2;
-  }
-  
+#playButton {
+  border-radius: 10px;
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  font-weight: 900;
+  font-size: 25px;
+  font-style: oblique;
+  z-index: 2;
+  background-color:rgb(107, 4, 4);
+}
+
+#Title {
+  border-radius: 10px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  border-color: black;
+  right: 750px;
+  top: 750px;
+  position:absolute;
+  width: 500px;
+  height: 100px;
+  font-weight: 900;
+  font-size: 25px;
+  z-index: 2;
+  background-color:rgb(107, 4, 4);
+  text-align:center;
+}
+
+#phonkButton {
+  border-radius: 10px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  border-color: black;
+  right: 750px;
+  top: 250px;
+  position:absolute;
+  width: 500px;
+  height: 100px;
+  font-weight: 900;
+  font-size: 25px;
+  z-index: 2;
+  background-color:rgb(107, 4, 4);
+  text-align:center;
+}
+#hardButton {
+  border-radius: 10px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  border-color: black;
+  right: 750px;
+  top: 150px;
+  position:absolute;
+  width: 500px;
+  height: 100px;
+  font-weight: 900;
+  font-size: 25px;
+  z-index: 2;
+  background-color:rgb(107, 4, 4);
+  text-align:center;
+}
