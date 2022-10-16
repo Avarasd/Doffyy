@@ -92,6 +92,7 @@ let randomiser;
 const musicSelect = function(selectedObject) {
     const  rand = Math.floor(Math.random() * selectedObject.length);
     if (selectedObject[rand].url != playingSong) {
+        console.log(playingSong)
         source.src = selectedObject[rand].url;
         playingSong = source.src;
         console.log("Playing " + selectedObject[rand].name);
