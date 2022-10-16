@@ -93,17 +93,23 @@ const musicSelect = function(selectedObject) {
     const  rand = Math.floor(Math.random() * selectedObject.length);
     if (selectedObject[rand].url != playingSong) {
         source.src = selectedObject[rand].url;
-        playingSong = source.src
+        playingSong = source.src;
         console.log("Playing " + selectedObject[rand].name);
         document.getElementById("Title").innerHTML = "Playing: "+ selectedObject[rand].name;
     }
     else {
-    /* Making it that its harder to get the same music consecutive times */
-        let random = selectedObject[Math.floor(Math.random() * selectedObject.length)]
-        source.src = random.url;
-        playingSong = source.src
-        console.log("Playing " + random.name);
-        document.getElementById("Title").innerHTML = "Playing: "+ random.name;
+    /* Making it that its impossible to get the same music consecutive times */
+        if (selectedObject[rand] == selectedObject.length) {
+            source.src = selectedObject[rand -1].url;
+        }
+        else{
+            
+            source.src = selectedObject[rand+1].url;
+            playingSong = source.src;
+            console.log("Playing " + selectedObject[rand+1]);
+            document.getElementById("Title").innerHTML = "Playing: "+ selectedObject[rand+1];
+        }
+        
     }
     music.load();
     music.play();
