@@ -123,8 +123,17 @@ const randommusic = function() {
     const randomObject = objects[keys[rand]];
     let randommMusic = Math.floor(Math.random() * randomObject.length);
     source.src = randomObject[randommMusic].url;
+
+    /* If the song that will be played is the same as the song before, change it */
+    
     if (source.src == playingSong) {
+
+        
+
         if (randomObject[randommMusic] == randomObject.length) {
+
+            /* Check if the song is the last song in the object, if so then pick a new song another way to prevent error */
+
             source.src = randomObject[randommMusic - 1].url
             console.log("Playing " + randomObject[randommMusic - 1].name);
             document.getElementById("Title").innerHTML = "Playing: "+ randomObject[randommMusic - 1].name;
