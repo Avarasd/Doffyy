@@ -85,7 +85,7 @@ music.volume = 0.1;
 
 let playingSong;
 let selectedObject;
-let randomiser
+let randomiser;
 
 /* Defining the music selecter function */
 
@@ -102,6 +102,8 @@ const musicSelect = function(selectedObject) {
     /* Making it that its impossible to get the same music consecutive times */
         if (selectedObject[rand] == selectedObject.length) {
             source.src = selectedObject[rand -1].url;
+            console.log("Playing " + selectedObject[rand - 1]);
+            document.getElementById("Title").innerHTML = "Playing: "+ selectedObject[rand - 1];
         }
         else{
             
@@ -125,7 +127,7 @@ const randommusic = function() {
     source.src = randomObject[randommMusic].url;
 
     /* If the song that will be played is the same as the song before, change it */
-    
+
     if (source.src == playingSong) {
 
         
@@ -134,11 +136,11 @@ const randommusic = function() {
 
             /* Check if the song is the last song in the object, if so then pick a new song another way to prevent error */
 
-            source.src = randomObject[randommMusic - 1].url
+            source.src = randomObject[randommMusic - 1].url;
             console.log("Playing " + randomObject[randommMusic - 1].name);
             document.getElementById("Title").innerHTML = "Playing: "+ randomObject[randommMusic - 1].name;
         }else{
-            source.src = randomObject[randommMusic + 1].url
+            source.src = randomObject[randommMusic + 1].url;
             console.log("Playing " + randomObject[randommMusic + 1].name);
             document.getElementById("Title").innerHTML = "Playing: "+ randomObject[randommMusic + 1].name;
         }
@@ -149,7 +151,7 @@ const randommusic = function() {
 
     music.load();
     music.play();
-    playingSong = source.src
+    playingSong = source.src;
     
 }
 
