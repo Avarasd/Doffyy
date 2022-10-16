@@ -8,7 +8,7 @@ var musicArray = [
     "/music/Immaculate.mp3",
     "/music/BassSlut.mp3"
 ]
-music.volume = 0.01;
+music.volume = 0.1;
 
 var musicSelect = function() {
     if(music.paused) {
