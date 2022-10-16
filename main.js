@@ -1,6 +1,7 @@
 /* Defining things */
 const  music = document.getElementById("BackgroundM");
 const  source = document.getElementById("source");
+const  button = document.getElementById("button")
 const  musicObject = [
     {
         name:   "Cruel",
@@ -40,7 +41,7 @@ function musicSelect() {
     } 
 }
 /* Detecting user interaction to prevent user didn't interact with document error */
-document.addEventListener('click', function() {
+button.addEventListener('click', function() {
     musicSelect()
 })
 
