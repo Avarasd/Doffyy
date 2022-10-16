@@ -70,7 +70,7 @@ music.volume = 0.1;
 let playingSong;
 let selectedObject;
 let randomiser
-/* Defining the ./music selecter function */
+/* Defining the music selecter function */
 
 const musicSelect = function(selectedObject) {
     const  rand = Math.floor(Math.random() * selectedObject.length);
@@ -89,8 +89,9 @@ const musicSelect = function(selectedObject) {
     }
     music.load();
     music.play();
-    
 };
+
+/* Random music from random Object function */
 
 const randommusic = function() {
     let keys = Object.keys(objects);
@@ -104,14 +105,14 @@ const randommusic = function() {
     document.getElementById("Title").innerHTML = "Playing: "+ randomObject[randommMusic].name;
 }
 
-/* Button that plays new ./music */
+/* Button that plays new music */
 
 button.onclick = function(){
     randommusic();
     selectedObject = randomiser
 }
 
-/* If ./music ends calling the random ./music selecter and player function */
+/* If music ends calling the random music selecter and player function */
 
 music.addEventListener('pause', function(){
     if (selectedObject != randomiser)
