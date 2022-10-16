@@ -1,7 +1,7 @@
 /* Defining things */
 const  music = document.getElementById("BackgroundM");
 const  source = document.getElementById("source");
-const  button = document.getElementById("button")
+const  button = document.getElementById("myButton")
 const  musicObject = [
     {
         name:   "Cruel",
@@ -41,12 +41,9 @@ function musicSelect() {
     } 
 }
 /* Detecting user interaction to prevent user didn't interact with document error */
-button.addEventListener('click', function() {
-    musicSelect()
-})
+button.onclick = musicSelect()
 
 /* If music ends calling the random music selecter and player function */
-music.addEventListener('pause', function(){
-    musicSelect()
-})
+music.addEventListener('pause', musicSelect)
+
 
