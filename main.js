@@ -55,6 +55,10 @@ const objects = {
             name:   "Overdose",
             url:    "./music/Phonk/Overdose.mp3",
         },
+        {
+            name:   "Joka Da",
+            url:    "./music/Phonk/Jokada.mp3",
+        },
     ],
     
     hardObject : [
@@ -70,6 +74,7 @@ music.volume = 0.1;
 let playingSong;
 let selectedObject;
 let randomiser
+
 /* Defining the music selecter function */
 
 const musicSelect = function(selectedObject) {
