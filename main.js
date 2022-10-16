@@ -81,8 +81,8 @@ const objects = {
     ], 
 };
 
-
 music.volume = 0.1;
+
 let playingSong;
 let selectedObject;
 let randomiser
@@ -98,6 +98,7 @@ const musicSelect = function(selectedObject) {
         document.getElementById("Title").innerHTML = "Playing: "+ selectedObject[rand].name;
     }
     else {
+
     /* Making it that its impossible to get the same music consecutive times */
         if (selectedObject[rand] == selectedObject.length) {
             source.src = selectedObject[rand -1].url;
@@ -109,7 +110,6 @@ const musicSelect = function(selectedObject) {
             console.log("Playing " + selectedObject[rand+1]);
             document.getElementById("Title").innerHTML = "Playing: "+ selectedObject[rand+1];
         }
-        
     }
     music.load();
     music.play();
@@ -133,16 +133,17 @@ const randommusic = function() {
 
 button.onclick = function(){
     randommusic();
-    selectedObject = randomiser
+    selectedObject = randomiser;
 }
 
 /* If music ends calling the random music selecter and player function */
 
 music.addEventListener('pause', function(){
-    if (selectedObject != randomiser)
+    if (selectedObject != randomiser) {
         musicSelect(selectedObject);
-    else
+    }else{
         randommusic();
+    }
 });
 
 /* Adding Buttons (In Progress) */
