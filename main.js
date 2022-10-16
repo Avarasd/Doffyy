@@ -66,6 +66,18 @@ const objects = {
             name: "BassSlut",
             url: "./music/Hard/BassSlut.mp3",
         },
+        {
+            name: "Legend",
+            url: "./music/Hard/Legend.mp3",
+        },
+        {
+            name: "Frozen In Time",
+            url: "./music/Hard/FrozenInTime.mp3",
+        },
+        {
+            name: "Mystique",
+            url: "./music/Hard/Mystique.mp3",
+        },
     ], 
 };
 
