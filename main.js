@@ -1,7 +1,7 @@
 /* Defining things */
-var music = document.getElementById("BackgroundM");
-var source = document.getElementById("source");
-var musicArray = [
+const  music = document.getElementById("BackgroundM");
+const  source = document.getElementById("source");
+const  musicArray = [
     "/music/Cruel.mp3",
     "/music/Ragnarok.mp3",
     "/music/Berserk.mp3",
