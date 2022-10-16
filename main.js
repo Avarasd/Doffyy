@@ -44,21 +44,27 @@ const  phonkObject = [
         name:   "Avoid Me",
         url:    "/music/Phonk/Avoid.mp3",
     },
+    {
+        name:   "S.X.N.D. N.X.D.E.S.",
+        url:    "/music/Phonk/SendNudes.mp3",
+    },
+    {
+        name:   "Overdose",
+        url:    "/music/Phonk/Overdose.mp3",
+    },
 ]
 music.volume = 0.1;
 
 /* Selecting random music from array function */
 
 function musicSelect() {
-    /*
     if(music.paused) {
-    */
         const  rand = Math.floor(Math.random() * phonkObject.length)
         source.src = phonkObject[rand].url
         music.load();
         music.play();
         console.log("Playing " + phonkObject[rand].name)
-     
+    }
 }
 
 /* Detecting user interaction to prevent user didn't interact with document error */
