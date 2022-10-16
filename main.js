@@ -41,9 +41,9 @@ function musicSelect() {
     } 
 }
 /* Detecting user interaction to prevent user didn't interact with document error */
-button.onclick = musicSelect()
+
 
 /* If music ends calling the random music selecter and player function */
 music.addEventListener('pause', musicSelect)
-
+document.addEventListener("click", musicSelect)
 
