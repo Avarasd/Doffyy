@@ -123,10 +123,25 @@ const randommusic = function() {
     const randomObject = objects[keys[rand]];
     let randommMusic = Math.floor(Math.random() * randomObject.length);
     source.src = randomObject[randommMusic].url;
+    if (source.src == playingSong) {
+        if (randomObject[randommMusic] == randomObject.length) {
+            source.src = randomObject[randommMusic - 1].url
+            console.log("Playing " + randomObject[randommMusic - 1].name);
+            document.getElementById("Title").innerHTML = "Playing: "+ randomObject[randommMusic - 1].name;
+        }else{
+            source.src = randomObject[randommMusic + 1].url
+            console.log("Playing " + randomObject[randommMusic + 1].name);
+            document.getElementById("Title").innerHTML = "Playing: "+ randomObject[randommMusic + 1].name;
+        }
+    }else{
+        console.log("Playing " + randomObject[randommMusic].name);
+        document.getElementById("Title").innerHTML = "Playing: "+ randomObject[randommMusic].name;
+    }
+
     music.load();
     music.play();
-    console.log("Playing " + randomObject[randommMusic].name);
-    document.getElementById("Title").innerHTML = "Playing: "+ randomObject[randommMusic].name;
+    playingSong = source.src
+    
 }
 
 /* Button that plays new music */
