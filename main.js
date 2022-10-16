@@ -67,8 +67,9 @@ const objects = {
 
 
 music.volume = 0.1;
-let selectedObject;
 
+let selectedObject;
+let randomiser
 /* Defining the music selecter function */
 
 const musicSelect = function(selectedObject) {
@@ -84,7 +85,7 @@ const randomMusic = function() {
     let keys = Object.keys(objects);
     const rand = Math.floor(Math.random() * keys.length);
     const randomObject = objects[keys[rand]];
-    randommMusic = Math.floor(Math.random() * randomObject.length);
+    let randommMusic = Math.floor(Math.random() * randomObject.length);
     source.src = randomObject[randommMusic].url;
     music.load();
     music.play();
@@ -96,22 +97,26 @@ const randomMusic = function() {
 
 button.onclick = function(){
     randomMusic();
+    selectedObject = randomiser
 }
 
 /* If music ends calling the random music selecter and player function */
 
 music.addEventListener('pause', function(){
-    musicSelect(selectedObject);
+    if (selectedObject != randomiser)
+        musicSelect(selectedObject);
+    else
+        randomMusic();
 });
 
 /* Adding Buttons (In Progress) */
 
 phonkButton.onclick = function(){
-    selectedObject = objects["phonkObject"];
+    const selectedObject = objects["phonkObject"];
     musicSelect(selectedObject);
 }
 
 hardButton.onclick = function() {
-    selectedObject = objects["hardObject"];
+    const selectedObject = objects["hardObject"];
     musicSelect(selectedObject);
 }
