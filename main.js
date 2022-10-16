@@ -67,19 +67,30 @@ const objects = {
 
 
 music.volume = 0.1;
-
+let playingSong;
 let selectedObject;
 let randomiser
 /* Defining the ./music selecter function */
 
 const musicSelect = function(selectedObject) {
     const  rand = Math.floor(Math.random() * selectedObject.length);
-    source.src = selectedObject[rand].url;
+    if (selectedObject[rand].url != playingSong) {
+        source.src = selectedObject[rand].url;
+        playingSong = source.src
+        console.log("Playing " + selectedObject[rand].name);
+        document.getElementById("Title").innerHTML = "Playing: "+ selectedObject[rand].name;
+    }
+    else {
+        let random = selectedObject[Math.floor(Math.random() * selectedObject.length)]
+        source.src = random.url;
+        playingSong = source.src
+        console.log("Playing " + random.name);
+        document.getElementById("Title").innerHTML = "Playing: "+ random.name;
+    }
     music.load();
     music.play();
-    console.log("Playing " + selectedObject[rand].name);
-    document.getElementById("Title").innerHTML = "Playing: "+ selectedObject[rand].name;
-}
+    
+};
 
 const randommusic = function() {
     let keys = Object.keys(objects);
