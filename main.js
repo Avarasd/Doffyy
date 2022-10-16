@@ -30,7 +30,7 @@ const  musicObject = [
 music.volume = 0.1;
 
 /* Selecting random music from array function */
-let  musicSelect = function() {
+function musicSelect() {
     if(music.paused) {
         const  rand = Math.floor(Math.random() * musicObject.length)
         source.src = musicObject[rand].url
