@@ -98,6 +98,7 @@ const musicSelect = function(selectedObject) {
         document.getElementById("Title").innerHTML = "Playing: "+ selectedObject[rand].name;
     }
     else {
+    /* Making it that its harder to get the same music consecutive times */
         let random = selectedObject[Math.floor(Math.random() * selectedObject.length)]
         source.src = random.url;
         playingSong = source.src
@@ -141,11 +142,11 @@ music.addEventListener('pause', function(){
 /* Adding Buttons (In Progress) */
 
 phonkButton.onclick = function(){
-    const selectedObject = objects["phonkObject"];
+    selectedObject = objects["phonkObject"];
     musicSelect(selectedObject);
 }
 
 hardButton.onclick = function() {
-    const selectedObject = objects["hardObject"];
+    selectedObject = objects["hardObject"];
     musicSelect(selectedObject);
 }
