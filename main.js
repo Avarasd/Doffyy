@@ -1,27 +1,43 @@
 /* Defining things */
 const  music = document.getElementById("BackgroundM");
 const  source = document.getElementById("source");
-const  musicArray = [
-    "/music/Cruel.mp3",
-    "/music/Ragnarok.mp3",
-    "/music/Berserk.mp3",
-    "/music/Wrath.mp3",
-    "/music/Immaculate.mp3",
-    "/music/BassSlut.mp3"
+const  musicObject = [
+    {
+        name:   "Cruel",
+        url:    "/music/Cruel.mp3",
+    },
+    {
+        name:   "Ragnarok",
+        url:    "/music/Ragnarok.mp3",
+    },
+    {
+        name:   "Berserk",
+        url:    "/music/Berserk.mp3",
+    },
+    {
+        name:   "Wrath",
+        url:    "/music/Wrath.mp3",
+    },
+    {
+        name:   "Immaculate",
+        url:    "/music/Immaculate.mp3",
+    },
+    {
+        name:   "BassSlut",
+        url:    "/music/BassSlut.mp3",
+    }
 ]
 music.volume = 0.1;
 
 /* Selecting random music from array function */
-var musicSelect = function() {
+let  musicSelect = function() {
     if(music.paused) {
-        var rand = Math.floor(Math.random() * musicArray.length)
-        musicArray[rand]
-        source.src = musicArray[rand]
+        const  rand = Math.floor(Math.random() * musicObject.length)
+        source.src = musicObject[rand].url
         music.load();
         music.play();
-        console.log("Playing " + source.src)
-    }
-    
+        console.log("Playing " + musicObject[rand].name)
+    } 
 }
 /* Detecting user interaction to prevent user didn't interact with document error */
 document.addEventListener('click', function() {
