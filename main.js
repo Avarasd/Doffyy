@@ -3,7 +3,7 @@
 const  music = document.getElementById("BackgroundM");
 const  source = document.getElementById("source");
 const  button = document.getElementById("myButton")
-const  musicObject = [
+const  phonkObject = [
     {
         name:   "Cruel",
         url:    "/music/Phonk/Cruel.mp3",
@@ -32,6 +32,14 @@ const  musicObject = [
         name:   "Midnight",
         url:    "/music/Phonk/Midnight.mp3",
     },
+    {
+        name:   "Murder In My Mind",
+        url:    "/music/Phonk/MIMM.mp3",
+    },
+    {
+        name:   "Prince Of Darkness",
+        url:    "/music/Phonk/Prince.mp3",
+    },
 ]
 music.volume = 0.1;
 
@@ -41,11 +49,11 @@ function musicSelect() {
     /*
     if(music.paused) {
     */
-        const  rand = Math.floor(Math.random() * musicObject.length)
-        source.src = musicObject[rand].url
+        const  rand = Math.floor(Math.random() * phonkObject.length)
+        source.src = phonkObject[rand].url
         music.load();
         music.play();
-        console.log("Playing " + musicObject[rand].name)
+        console.log("Playing " + phonkObject[rand].name)
      
 }
 
