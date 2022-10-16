@@ -1,3 +1,4 @@
+/* Defining things */
 var music = document.getElementById("BackgroundM");
 var source = document.getElementById("source");
 var musicArray = [
@@ -10,6 +11,7 @@ var musicArray = [
 ]
 music.volume = 0.1;
 
+/* Selecting random music from array function */
 var musicSelect = function() {
     if(music.paused) {
         var rand = Math.floor(Math.random() * musicArray.length)
@@ -21,11 +23,12 @@ var musicSelect = function() {
     }
     
 }
-
+/* Detecting user interaction to prevent user didn't interact with document error */
 document.addEventListener('click', function() {
     musicSelect()
 })
 
+/* If music ends calling the random music selecter and player function */
 music.addEventListener('pause', function(){
     musicSelect()
 })
