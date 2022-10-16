@@ -23,12 +23,10 @@ var musicSelect = function() {
 }
 
 document.addEventListener('click', function() {
-    console.log(music.paused)
     musicSelect()
 })
 
 music.addEventListener('pause', function(){
-    console.log("Music is paused")
     musicSelect()
 })
 
