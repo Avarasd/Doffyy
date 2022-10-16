@@ -2,7 +2,9 @@
 
 const  music = document.getElementById("BackgroundM");
 const  source = document.getElementById("source");
-const  button = document.getElementById("myButton")
+const  button = document.getElementById("myButton");
+const phonkButton = document.getElementById("phonkButton")
+
 const  phonkObject = [
     {
         name:   "Cruel",
@@ -52,27 +54,33 @@ const  phonkObject = [
         name:   "Overdose",
         url:    "/music/Phonk/Overdose.mp3",
     },
-]
+];
 music.volume = 0.1;
-
+let selectedObject = phonkObject
 /* Selecting random music from array function */
 
-function musicSelect() {
+function musicSelect(selectedObject) {
     if(music.paused) {
-        const  rand = Math.floor(Math.random() * phonkObject.length)
-        source.src = phonkObject[rand].url
+        const  rand = Math.floor(Math.random() * selectedObject.length);
+        source.src = selectedObject[rand].url;
         music.load();
         music.play();
-        console.log("Playing " + phonkObject[rand].name)
+        console.log("Playing " + selectedObject[rand].name);
     }
 }
 
 /* Detecting user interaction to prevent user didn't interact with document error */
 
-document.addEventListener("click", musicSelect)
+document.addEventListener("click", musicSelect(selectedObject));
 
 /* If music ends calling the random music selecter and player function */
 
-music.addEventListener('pause', musicSelect)
+music.addEventListener('pause', musicSelect(selectedObject));
 
+/* Adding Buttons 
 
+phonkButton.onclick = function(){
+    selectedObject = phonkObject
+    musicSelect(selectedObject)
+}
+*/
