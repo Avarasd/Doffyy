@@ -66,3 +66,19 @@
   background-color:rgb(107, 4, 4);
   text-align:center;
 }
+
+#rapButton {
+  border-radius: 10px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  border-color: black;
+  right: 750px;
+  top: 350px;
+  position:absolute;
+  width: 500px;
+  height: 100px;
+  font-weight: 900;
+  font-size: 25px;
+  z-index: 2;
+  background-color:rgb(107, 4, 4);
+  text-align:center;
+}

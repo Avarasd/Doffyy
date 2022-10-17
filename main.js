@@ -5,6 +5,7 @@ const  source = document.getElementById("source");
 const  button = document.getElementById("playButton");
 const phonkButton = document.getElementById("phonkButton");
 const hardButton = document.getElementById("hardButton");
+const rapButton = document.getElementById("rapButton");
 const objects = {
     phonkObject : [
         {
@@ -79,6 +80,25 @@ const objects = {
             url: "./music/Hard/Mystique.mp3",
         },
     ], 
+
+    rapObject : [
+        {
+            name: "No Snitching",
+            url: "./music/Rap/NoSnitching.mp3",
+        },
+        {
+            name: "Heart Of The City",
+            url: "./music/Rap/HeartOfTheCity.mp3",
+        },
+        {
+            name: "Niggas In Paris",
+            url: "./music/Rap/NiggasInParis.mp3",
+        },
+        {
+            name: "Billie Eilish",
+            url: "./music/Rap/BillieEilish.mp3",
+        },
+    ],
 };
 
 music.volume = 0.1;
@@ -181,5 +201,10 @@ phonkButton.onclick = function(){
 
 hardButton.onclick = function() {
     selectedObject = objects["hardObject"];
+    musicSelect(selectedObject);
+}
+
+rapButton.onclick = function() {
+    selectedObject = objects["rapObject"];
     musicSelect(selectedObject);
 }
