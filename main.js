@@ -150,8 +150,6 @@ const randommusic = function() {
 
     if (source.src == playingSong) {
 
-        
-
         if (randomObject[randommMusic] == randomObject.length) {
 
             /* Check if the song is the last song in the object, if so then pick a new song another way to prevent error */
