@@ -110,29 +110,33 @@ let randomiser;
 /* Defining the music selecter function */
 
 const musicSelect = function(selectedObject) {
-    const  rand = Math.floor(Math.random() * selectedObject.length);
+    let keys = Object.keys(selectedObject);
+    let rand = Math.floor(Math.random() * keys.length);
+    let randomMusic = keys[rand]
+    //let rand = Math.floor(Math.random() * selectedObject.length);
     if (selectedObject[rand].url != playingSong) {
         source.src = selectedObject[rand].url;
-        playingSong = source.src;
         console.log("Playing " + selectedObject[rand].name);
         document.getElementById("Title").innerHTML = "Playing: "+ selectedObject[rand].name;
-    }else{
+    } else {
 
     /* Making it that its impossible to get the same music consecutive times */
         if (selectedObject[rand] == selectedObject.length) {
 
-            source.src = selectedObject[rand -1].url;
-            playingSong = source.src;
-            console.log("Playing " + selectedObject[rand - 1]);
-            document.getElementById("Title").innerHTML = "Playing: "+ selectedObject[rand - 1];
-        }else{
-            
-            source.src = selectedObject[rand+1].url;
-            playingSong = source.src;
-            console.log("Playing " + selectedObject[rand+1]);
-            document.getElementById("Title").innerHTML = "Playing: "+ selectedObject[rand+1];
+            let selectedMusic = selectedObject[rand - 1]
+            source.src = selectedMusic.url;
+            console.log("Playing " + selectedMusic.name);
+            document.getElementById("Title").innerHTML = "Playing: "+ selectedMusic.name;
+
+        } else {
+            let selectedMusic = selectedObject[rand + 1]
+            source.src = selectedMusic.url;
+            console.log("Playing " + selectedMusic.name);
+            document.getElementById("Title").innerHTML = "Playing: "+ selectedMusic.name;
+
         }
     }
+    playingSong = selectedObject[rand].url;
     music.load();
     music.play();
 };
@@ -140,9 +144,10 @@ const musicSelect = function(selectedObject) {
 /* Random music from random Object function */
 
 const randommusic = function() {
+
     let keys = Object.keys(objects);
-    const rand = Math.floor(Math.random() * keys.length);
-    const randomObject = objects[keys[rand]];
+    let rand = Math.floor(Math.random() * keys.length);
+    let  randomObject = objects[keys[rand]];
     let randommMusic = Math.floor(Math.random() * randomObject.length);
     source.src = randomObject[randommMusic].url;
 
@@ -154,17 +159,24 @@ const randommusic = function() {
 
             /* Check if the song is the last song in the object, if so then pick a new song another way to prevent error */
 
-            source.src = randomObject[randommMusic - 1].url;
-            console.log("Playing " + randomObject[randommMusic - 1].name);
-            document.getElementById("Title").innerHTML = "Playing: "+ randomObject[randommMusic - 1].name;
-        }else{
-            source.src = randomObject[randommMusic + 1].url;
-            console.log("Playing " + randomObject[randommMusic + 1].name);
-            document.getElementById("Title").innerHTML = "Playing: "+ randomObject[randommMusic + 1].name;
+            let  selectedMusic = randomObject[randommMusic - 1]
+            source.src = selectedMusic.url;
+            console.log("Playing " + selectedMusic.name);
+            document.getElementById("Title").innerHTML = "Playing: "+ selectedMusic.name;
+
+        } else {
+
+            let selectedMusic = randomObject[randommMusic + 1]
+            source.src = selectedMusic.url;
+            console.log("Playing " + selectedMusic.name);
+            document.getElementById("Title").innerHTML = "Playing: "+ selectedMusic.name;
+
         }
-    }else{
+    } else {
+
         console.log("Playing " + randomObject[randommMusic].name);
         document.getElementById("Title").innerHTML = "Playing: "+ randomObject[randommMusic].name;
+
     }
 
     music.load();
@@ -185,7 +197,7 @@ button.onclick = function(){
 music.addEventListener('pause', function(){
     if (selectedObject != randomiser) {
         musicSelect(selectedObject);
-    }else{
+    } else {
         randommusic();
     }
 });
