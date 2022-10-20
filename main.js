@@ -120,6 +120,7 @@ const musicSelect = function(selectedObject) {
     } else {
 
     /* Making it that its impossible to get the same music consecutive times */
+
         if (selectedObject[rand] == selectedObject.length) {
 
             let selectedMusic = selectedObject[rand - 1]
@@ -128,6 +129,7 @@ const musicSelect = function(selectedObject) {
             document.getElementById("Title").innerHTML = "Playing: "+ selectedMusic.name;
 
         } else {
+
             let selectedMusic = selectedObject[rand + 1]
             source.src = selectedMusic.url;
             console.log("Playing " + selectedMusic.name);
@@ -135,9 +137,11 @@ const musicSelect = function(selectedObject) {
 
         }
     }
+
     playingSong = selectedObject[rand].url;
     music.load();
     music.play();
+
 };
 
 /* Random music from random Object function */
@@ -171,6 +175,7 @@ const randommusic = function() {
             document.getElementById("Title").innerHTML = "Playing: "+ selectedMusic.name;
 
         }
+        
     } else {
 
         console.log("Playing " + randomObject[randommMusic].name);
