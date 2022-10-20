@@ -112,7 +112,6 @@ let randomiser;
 const musicSelect = function(selectedObject) {
     let keys = Object.keys(selectedObject);
     let rand = Math.floor(Math.random() * keys.length);
-    let randomMusic = keys[rand]
     //let rand = Math.floor(Math.random() * selectedObject.length);
     if (selectedObject[rand].url != playingSong) {
         source.src = selectedObject[rand].url;
