@@ -6,6 +6,9 @@ const  button = document.getElementById("playButton");
 const phonkButton = document.getElementById("phonkButton");
 const hardButton = document.getElementById("hardButton");
 const rapButton = document.getElementById("rapButton");
+const videoChangerButton = document.getElementById("videoChanger")
+const myVideo = document.getElementById("myVideo")
+let  nowTheme = document.createElement("nowTheme")
 const objects = {
     phonkObject : [
         {
@@ -106,6 +109,24 @@ music.volume = 0.1;
 let playingSong;
 let selectedObject;
 let randomiser;
+
+const videoChanger = function(){
+    if (nowTheme ==  "images/doffy.mp4"){
+        nowTheme.setAttribute("src", "images/luffy.mp4")
+    } else {
+        nowTheme.setAttribute("src", "images/doffy.mp4")
+        
+    }
+    myVideo.appendChild(nowTheme)
+    myVideo.load()
+    myVideo.play()
+    console.log({
+        src: nowTheme.getAttribute("src"),
+        src: nowTheme.getAttribute("type"),
+    })
+}
+
+
 
 /* Defining the music selecter function */
 
@@ -222,3 +243,5 @@ rapButton.onclick = function() {
     selectedObject = objects["rapObject"];
     musicSelect(selectedObject);
 }
+
+videoChangerButton.onclick = videoChanger
