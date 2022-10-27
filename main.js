@@ -8,7 +8,6 @@ const hardButton = document.getElementById("hardButton");
 const rapButton = document.getElementById("rapButton");
 const videoChangerButton = document.getElementById("videoChanger")
 const myVideo = document.getElementById("myVideo")
-
 let  nowTheme = document.createElement("nowTheme")
 nowTheme.setAttribute("src", "images/doffy.mp4")
 nowTheme.setAttribute("type", "video/mp4")
@@ -127,12 +126,15 @@ const videoChanger = function(){
         nowTheme.setAttribute("type", "video/mp4")
     }
     */
+    const backGVB = document.getElementById("currentBVideo")
    if (nowTheme.getAttribute("currentVideo") == "doffy"){
     myVideo.src = "images/luffy.mp4"
     nowTheme.setAttribute("currentVideo", "luffy")
+    backGVB.innerHTML = "Current Background Video: luffy"
    } else {
     myVideo.src = "images/doffy.mp4"
     nowTheme.setAttribute("currentVideo", "doffy")
+    backGVB.innerHTML = "Current Background Video: doffy"
    }
     myVideo.appendChild(nowTheme)
     myVideo.load()

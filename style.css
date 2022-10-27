@@ -97,3 +97,19 @@
   background-color:rgb(107, 4, 4);
   text-align:center;
 }
+
+#currentBVideo {
+  border-radius: 10px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  border-color: black;
+  right: 855px;
+  top: 600px;
+  position:absolute;
+  width: 300px;
+  height: 50px;
+  font-weight: 900;
+  font-size: 20px;
+  z-index: 2;
+  background-color:rgb(107, 4, 4);
+  text-align:center;
+}
