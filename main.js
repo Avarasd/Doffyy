@@ -8,9 +8,11 @@ const hardButton = document.getElementById("hardButton");
 const rapButton = document.getElementById("rapButton");
 const videoChangerButton = document.getElementById("videoChanger")
 const myVideo = document.getElementById("myVideo")
+
 let  nowTheme = document.createElement("nowTheme")
 nowTheme.setAttribute("src", "images/doffy.mp4")
 nowTheme.setAttribute("type", "video/mp4")
+nowTheme.setAttribute("currentVideo", "doffy")
 myVideo.appendChild(nowTheme)
 myVideo.play()
 const objects = {
@@ -125,10 +127,12 @@ const videoChanger = function(){
         nowTheme.setAttribute("type", "video/mp4")
     }
     */
-   if (myVideo.src == "http://127.0.0.1:5500/images/doffy.mp4"){
+   if (nowTheme.getAttribute("currentVideo") == "doffy"){
     myVideo.src = "images/luffy.mp4"
+    nowTheme.setAttribute("currentVideo", "luffy")
    } else {
     myVideo.src = "images/doffy.mp4"
+    nowTheme.setAttribute("currentVideo", "doffy")
    }
     myVideo.appendChild(nowTheme)
     myVideo.load()
