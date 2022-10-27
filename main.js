@@ -115,7 +115,7 @@ let selectedObject;
 let randomiser;
 
 const videoChanger = function(){
-    setTimeout(function(){
+    
     /*
     if (nowTheme.getAttribute("src") ==  "images/doffy.mp4"){
         nowTheme.setAttribute("src", "images/luffy.mp4")
@@ -125,7 +125,7 @@ const videoChanger = function(){
         nowTheme.setAttribute("type", "video/mp4")
     }
     */
-   if (myVideo.src == "images/doffy.mp4"){
+   if (myVideo.src == "http://127.0.0.1:5500/images/doffy.mp4"){
     myVideo.src = "images/luffy.mp4"
    } else {
     myVideo.src = "images/doffy.mp4"
@@ -139,7 +139,6 @@ const videoChanger = function(){
         type: nowTheme.getAttribute("type"),
     });
     */
-    },5)
 }
 
 
