@@ -116,6 +116,7 @@ let randomiser;
 
 const videoChanger = function(){
     setTimeout(function(){
+    /*
     if (nowTheme.getAttribute("src") ==  "images/doffy.mp4"){
         nowTheme.setAttribute("src", "images/luffy.mp4")
         nowTheme.setAttribute("type", "video/mp4")
@@ -123,13 +124,21 @@ const videoChanger = function(){
         nowTheme.setAttribute("src", "images/doffy.mp4")
         nowTheme.setAttribute("type", "video/mp4")
     }
+    */
+   if (myVideo.src == "images/doffy.mp4"){
+    myVideo.src = "images/luffy.mp4"
+   } else {
+    myVideo.src = "images/doffy.mp4"
+   }
     myVideo.appendChild(nowTheme)
     myVideo.load()
     myVideo.play()
+    /*
     console.log({
         src: nowTheme.getAttribute("src"),
         type: nowTheme.getAttribute("type"),
     });
+    */
     },5)
 }
 
