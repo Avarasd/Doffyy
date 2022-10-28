@@ -116,16 +116,6 @@ let selectedObject;
 let randomiser;
 
 const videoChanger = function(){
-    
-    /*
-    if (nowTheme.getAttribute("src") ==  "images/doffy.mp4"){
-        nowTheme.setAttribute("src", "images/luffy.mp4")
-        nowTheme.setAttribute("type", "video/mp4")
-    } else {
-        nowTheme.setAttribute("src", "images/doffy.mp4")
-        nowTheme.setAttribute("type", "video/mp4")
-    }
-    */
     const backGVB = document.getElementById("currentBVideo")
    if (nowTheme.getAttribute("currentVideo") == "doffy"){
     myVideo.src = "images/luffy.mp4"
@@ -139,12 +129,7 @@ const videoChanger = function(){
     myVideo.appendChild(nowTheme)
     myVideo.load()
     myVideo.play()
-    /*
-    console.log({
-        src: nowTheme.getAttribute("src"),
-        type: nowTheme.getAttribute("type"),
-    });
-    */
+   console.log("New background video: " + nowTheme.getAttribute("currentVideo"))
 }
 
 
