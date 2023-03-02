@@ -8,6 +8,9 @@ const hardButton = document.getElementById("hardButton");
 const rapButton = document.getElementById("rapButton");
 const videoChangerButton = document.getElementById("videoChanger")
 const myVideo = document.getElementById("myVideo")
+const invisibleMode = document.getElementById("invisibleMode")
+let invisible = false
+
 let  nowTheme = document.createElement("nowTheme")
 nowTheme.setAttribute("src", "images/doffy.mp4")
 nowTheme.setAttribute("type", "video/mp4")
@@ -116,15 +119,12 @@ let selectedObject;
 let randomiser;
 
 const videoChanger = function(){
-    const backGVB = document.getElementById("currentBVideo")
    if (nowTheme.getAttribute("currentVideo") == "doffy"){
     myVideo.src = "images/luffy.mp4"
     nowTheme.setAttribute("currentVideo", "luffy")
-    backGVB.innerHTML = "Current Background Video: luffy"
    } else {
     myVideo.src = "images/doffy.mp4"
     nowTheme.setAttribute("currentVideo", "doffy")
-    backGVB.innerHTML = "Current Background Video: doffy"
    }
     myVideo.appendChild(nowTheme)
     myVideo.load()
@@ -248,6 +248,27 @@ hardButton.onclick = function() {
 rapButton.onclick = function() {
     selectedObject = objects["rapObject"];
     musicSelect(selectedObject);
+}
+
+invisibleMode.onclick = function() {
+    if(invisible == false){
+        button.hidden = true
+        rapButton.hidden = true
+        phonkButton.hidden = true
+        hardButton.hidden = true
+        videoChangerButton.hidden = true
+        document.getElementById("Title").hidden = true
+        invisible = true
+    }
+    else{
+        button.hidden = false
+        rapButton.hidden = false
+        phonkButton.hidden = false
+        hardButton.hidden = false
+        videoChangerButton.hidden = false
+        document.getElementById("Title").hidden = false
+        invisible = false
+    }
 }
 
 videoChangerButton.onclick = videoChanger

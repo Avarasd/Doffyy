@@ -98,14 +98,14 @@
   text-align:center;
 }
 
-#currentBVideo {
+#invisibleMode {
   border-radius: 10px;
   font-family:Georgia, 'Times New Roman', Times, serif;
   border-color: black;
-  right: 855px;
+  right: 1800px;
   top: 600px;
   position:absolute;
-  width: 300px;
+  width: 50px;
   height: 50px;
   font-weight: 900;
   font-size: 20px;
