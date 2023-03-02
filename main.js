@@ -122,6 +122,9 @@ const videoChanger = function(){
    if (nowTheme.getAttribute("currentVideo") == "doffy"){
     myVideo.src = "images/luffy.mp4"
     nowTheme.setAttribute("currentVideo", "luffy")
+   } else if(nowTheme.getAttribute("currentVideo") == "luffy"){
+    myVideo.src = "images/sunset.mp4"
+    nowTheme.setAttribute("currentVideo", "sunset")
    } else {
     myVideo.src = "images/doffy.mp4"
     nowTheme.setAttribute("currentVideo", "doffy")
