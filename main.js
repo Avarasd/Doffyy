@@ -135,8 +135,6 @@ const videoChanger = function(){
    console.log("New background video: " + nowTheme.getAttribute("currentVideo"))
 }
 
-
-
 /* Defining the music selecter function */
 
 const musicSelect = function(selectedObject) {
@@ -253,7 +251,9 @@ rapButton.onclick = function() {
     musicSelect(selectedObject);
 }
 
-invisibleMode.onclick = function() {
+videoChangerButton.onclick = videoChanger
+
+const turnvisibility  = function() {
     if(invisible == false){
         button.hidden = true
         rapButton.hidden = true
@@ -262,8 +262,7 @@ invisibleMode.onclick = function() {
         videoChangerButton.hidden = true
         document.getElementById("Title").hidden = true
         invisible = true
-    }
-    else{
+    } else {
         button.hidden = false
         rapButton.hidden = false
         phonkButton.hidden = false
@@ -274,4 +273,4 @@ invisibleMode.onclick = function() {
     }
 }
 
-videoChangerButton.onclick = videoChanger
+invisibleMode.onclick = turnvisibility
